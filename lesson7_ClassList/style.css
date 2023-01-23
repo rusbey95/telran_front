@@ -1,0 +1,15 @@
+/* p {
+    color: red;
+    background: #ddd;
+}
+.active {
+    color: #ddd;
+    background: red;
+} */
+
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
