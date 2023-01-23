@@ -74,6 +74,7 @@ const companyFounders = [
         salary: "1300",
     },
 ];
+const fieldName = ['No.', 'Price', 'Position', 'Salary'];
 
 const table = document.createElement('table'); 
 const thead = document.createElement('thead'); 
@@ -93,10 +94,9 @@ function createTableTheadTitles(theadTrList) {
         tr.append(th);
     }
 }
-createTableTheadTitles(['No.', 'Price', 'Position', 'Salary']);
+createTableTheadTitles(fieldName);
 
 function createTableBodyContent(theadTdList) {
-        
     for (let i = 0; i < theadTdList.length; i++) {
         const tr = document.createElement('tr');
         const td = document.createElement('td');
