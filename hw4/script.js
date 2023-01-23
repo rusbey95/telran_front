@@ -94,7 +94,6 @@ function createTableTheadTitles(theadTrList) {
         tr.append(th);
     }
 }
-createTableTheadTitles(fieldName);
 
 function createTableBodyContent(theadTdList) {
     for (let i = 0; i < theadTdList.length; i++) {
@@ -117,4 +116,6 @@ function createTableBodyContent(theadTdList) {
         tbody.append(tr);
     }
 }
+
+createTableTheadTitles(fieldName);
 createTableBodyContent(companyFounders);
