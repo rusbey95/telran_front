@@ -10,8 +10,14 @@ body {
     max-width: 600px;
     margin: 0 auto;
 }
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 form,
-.product-item  {
+.products-item  {
     padding: 20px;
     background: #ddd;
     margin: 20px 0;
@@ -28,7 +34,8 @@ input {
     text-transform: capitalize;
     font-size: 1rem;
 }
-button {
+button, 
+.show-products-sum {
     padding: 10px;
     background: #e2f0ff;
     border: 1px solid #c5d0d9;
@@ -40,6 +47,7 @@ button {
     width: 100%;
     font-size: 1rem;
 }
-button:hover {
+button:hover,
+.show-products-sum:hover {
     background: #fff;
 }
