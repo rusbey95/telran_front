@@ -1,29 +1,45 @@
-.keyboard {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-gap: 10px;
-    max-width: 500px;
-    align-items: center;
-    justify-content:center;
-    list-style: none;
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+}
+.products {
+    max-width: 600px;
     margin: 0 auto;
 }
-.keyboard li {
-    background: #000;
-    padding: 10px;
-    border-radius: 4px;
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
-.keyboard li:hover,
-.keyboard li.active {
+form,
+.product-item  {
+    padding: 20px;
     background: #ddd;
-    color: #000;
+    margin: 20px 0;
+    border-radius: 10px;
+    width: 100%;
+}
+input {
+    display: block;
+    width: 100%;
+    margin: 0 0 10px;
+    padding: 10px;
+    border: 1px solid #c5d0d9;
+    border-radius: 4px;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+button {
+    padding: 10px;
+    background: #e2f0ff;
+    border: 1px solid #c5d0d9;
+    border-radius: 4px;
     cursor: pointer;
+    transition: all 0.2s;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+}
+button:hover {
+    background: #fff;
 }
