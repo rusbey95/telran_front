@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="products">
+    <div class="container">
+        <div class="products">
+            <form>
+                <input type="text" id="product-title" placeholder="title" required>
+                <input type="number" id="product-price" placeholder="price" required>
+                <button>Add</button>
+            </form>
+            <span class="show-products-sum">Show products sum</span>
+        </div>
+
         <form>
-            <input type="text" id="product-title" placeholder="title" required>
-            <input type="number" id="product-price" placeholder="price" required>
-            <button>Add</button>
+            <input type="text" placeholder="password" id="user-password">
+            <span class="show-password">Show password</span>
         </form>
-        <span class="show-products-sum">Show products sum</span>
     </div>
     <script src="script.js"></script>
 </body>

@@ -47,7 +47,7 @@ function newProducts() {
     }
 }
 
-// hw task - 
+// task 1 - К сегодняшней форме добавьте кнопку. При клике на кнопку с помощью alert выводите итоговую сумму всех товаров.
 function showProductSum() {
     let productSum = 0;
 
@@ -62,4 +62,11 @@ function showProductSum() {
 productSumButton.addEventListener('click', function() {
     sumBox.innerHTML = '';
     showProductSum();
+});
+
+// task 2 -  Создайте input для ввода пароля. Рядом с input-ом добавьте так же кнопку. При первом клике на кнопку текст должен скрыться(вместо букв звезодчки, либо точки), а при повторном нажатии должен появиться обратно.
+const inputPassword = document.querySelector('#user-password');
+const buttonShowPassword = document.querySelector('.show-password');
+buttonShowPassword.addEventListener('click', function() {
+    console.log(inputPassword.length);
 });
