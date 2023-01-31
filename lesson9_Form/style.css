@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+form,
+.products-item {
+    padding: 20px;
+    background: #ddd;
+    margin: 20px 0;
+    border-radius: 10px;
+    width: 100%;
+}
+.products-item {
+    position: relative;
+}
+.close {
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.close,
+.close:hover {
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='512px' id='Layer_1' style='enable-background:new 0 0 512 512;' version='1.1' viewBox='0 0 512 512' width='512px' xml:space='preserve'%3E%3Cpath d='M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4 L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1 c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1 c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z'/%3E%3C/svg%3E") no-repeat 0 0/contain;
+}
+.close:hover {
+    opacity: 0.4;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin: 0 0 10px;
+    padding: 10px;
+    border: 1px solid #c5d0d9;
+    border-radius: 4px;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+input:last-child{
+    margin-bottom: 0;
+}
+button {
+    padding: 10px;
+    background: #e2f0ff;
+    border: 1px solid #c5d0d9;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+}
+button:hover {
+    background: #fff;
+}

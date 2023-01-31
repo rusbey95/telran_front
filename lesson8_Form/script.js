@@ -53,4 +53,3 @@ function newProducts() {
         createNode(products[i].title, products[i].price)
     }
 }
-
