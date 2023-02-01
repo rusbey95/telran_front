@@ -34,8 +34,7 @@ input {
     text-transform: capitalize;
     font-size: 1rem;
 }
-button, 
-.show-products-sum {
+.default-button {
     padding: 10px;
     background: #e2f0ff;
     border: 1px solid #c5d0d9;
@@ -47,7 +46,6 @@ button,
     width: 100%;
     font-size: 1rem;
 }
-button:hover,
-.show-products-sum:hover {
+.default-button:hover {
     background: #fff;
 }

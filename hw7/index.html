@@ -13,15 +13,18 @@
             <form>
                 <input type="text" id="product-title" placeholder="title" required>
                 <input type="number" id="product-price" placeholder="price" required>
-                <button>Add</button>
+                <button class="default-button">Add</button>
             </form>
-            <span class="show-products-sum">Show products sum</span>
         </div>
-
-        <form>
-            <input type="text" placeholder="password" id="user-password">
-            <span class="show-password">Show password</span>
-        </form>
+        <div class="products-sum">
+            <span class="show-products-sum default-button">Show products sum</span>
+        </div>
+        <div class="password">
+            <form>
+                <input type="text" placeholder="password" id="user-password">
+                <span class="show-password default-button">Hide password</span>
+            </form>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

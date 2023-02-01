@@ -4,10 +4,8 @@ const form       = document.querySelector('form');
 const button     = document.querySelector('button');
 const inputTitle = document.querySelector('#product-title');
 const inputPrice = document.querySelector('#product-price');
-const productSumButton = document.querySelector('.show-products-sum');
 
 let ul     = document.createElement('ul');
-let sumBox = document.createElement('div');
 ul.classList.add('products-list');
 
 const productArr = [];
@@ -48,6 +46,9 @@ function newProducts() {
 }
 
 // task 1 - К сегодняшней форме добавьте кнопку. При клике на кнопку с помощью alert выводите итоговую сумму всех товаров.
+const productSumButton = document.querySelector('.show-products-sum');
+const sumBlock         = document.querySelector('.products-sum');
+let sumResult          = document.createElement('div');
 function showProductSum() {
     let productSum = 0;
 
@@ -55,12 +56,12 @@ function showProductSum() {
         productSum += +productArr[i].price;
     }
 
-    sumBox.innerText = productSum;
-    products.append(sumBox);
+    sumResult.innerText = productSum;
+    sumBlock.append(sumResult);
 }
 
 productSumButton.addEventListener('click', function() {
-    sumBox.innerHTML = '';
+    sumResult.innerHTML = '';
     showProductSum();
 });
 
@@ -68,5 +69,11 @@ productSumButton.addEventListener('click', function() {
 const inputPassword = document.querySelector('#user-password');
 const buttonShowPassword = document.querySelector('.show-password');
 buttonShowPassword.addEventListener('click', function() {
-    console.log(inputPassword.length);
+    if (inputPassword.type === 'text') {
+        this.innerText = 'Show password';
+        inputPassword.type = 'password';
+    } else {
+        this.innerText = 'Hide password';
+        inputPassword.type = 'text';
+    }
 });
