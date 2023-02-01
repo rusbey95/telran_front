@@ -47,8 +47,11 @@ for (let i = 0; i < colors.length; i++) {
     li.style.fontSize     = '16px';
     li.style.marginBottom = '10px';
 
-    li.onclick = () => {
+    li.onmouseover = () => {
         body.style.backgroundColor = colors[i];
+    }
+    li.onmouseout = () => {
+        body.style.backgroundColor = '#fff'
     }
 }
 
@@ -93,6 +96,9 @@ ulKeyboard.classList.add('keyboard');
 for (let i = 0; i < keyboard.length; i++) {
     let liKeyboard = document.createElement('li');
     liKeyboard.innerText = keyboard[i];
+    if (liKeyboard.innerText === 'a') {
+        liKeyboard.style.marginLeft = '12px';
+    }
 
     ulKeyboard.append(liKeyboard);
     body.append(ulKeyboard);

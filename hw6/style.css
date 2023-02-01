@@ -1,8 +1,8 @@
 .keyboard {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     grid-gap: 10px;
-    max-width: 500px;
+    max-width: 550px;
     align-items: center;
     justify-content:center;
     list-style: none;
@@ -10,6 +10,8 @@
     margin: 0 auto;
 }
 .keyboard li {
+    flex: 0 0 25px;
+    max-width: 25px;
     background: #000;
     padding: 10px;
     border-radius: 4px;
