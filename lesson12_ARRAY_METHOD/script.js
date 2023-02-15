@@ -95,7 +95,7 @@
 // console.log(evenNumbers);
 
 
-const names = [ {name: "Roza", age: 40}, {name: "Lyudmila", age: 60}, {name: "Rasul", age: 30}, {name: "John", age: 25}];
+// const names = [ {name: "Roza", age: 40}, {name: "Lyudmila", age: 60}, {name: "Rasul", age: 30}, {name: "John", age: 25}];
 
-let namesMoreFourWord = names.filter(elem => elem.name.length > 4).map(elem => elem.name);
-console.log(namesMoreFourWord);
+// let namesMoreFourWord = names.filter(elem => elem.name.length > 4).map(elem => elem.name);
+// console.log(namesMoreFourWord);
