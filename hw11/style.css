@@ -1,0 +1,20 @@
+.counter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 140px;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid #ddd;
+}
+.counter-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-right: 1px solid #ddd;
+}
+.counter-item:last-child {
+    border-right: none;
+}
+.counter-item-btn:hover {
+    background: #ddd;
+}
