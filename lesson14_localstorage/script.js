@@ -47,3 +47,5 @@ removeButton.onclick = () => {
 
     localStorage.clear();
 }
+
+// localStorage.setItem('test', 23123);
