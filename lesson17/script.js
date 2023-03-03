@@ -13,18 +13,24 @@ function newProduct(name, price) {
 }
 
 //функция для обновления пунктов в списке
-function updateList() {
-    list.innerHtml = '';
-    products.forEach((product) => {
+function updateList(arr) {
+    list.innerHTML = '';
+    arr.forEach((product) => {
         let item = document.createElement('li');
         item.innerHTML = `${product.name} - ${product.price}`;
         list.append(item);
     });
 }
 
+// записываем в LocalStorage
 function writeLocalStorage(key, value) {
     let stringObj = JSON.stringify(value);
     localStorage.setItem(key, stringObj);
+}
+
+// получаем из LocalStorage
+function getLocalStorage() {
+    return JSON.parse(localStorage.getItem('obj'));
 }
 
 //обработчик отправки формы
@@ -35,6 +41,21 @@ form.onsubmit = (e) => {
     newProduct(nameValue, priceValue);
     nameInput.value = '';
     priceInput.value = '';
-    updateList();
+    updateList(products);
     writeLocalStorage('obj', products);
+    // if (getLocalStorage == null) {
+    //     writeLocalStorage('obj', products);
+    // } else {
+
+    // }
+    console.log(products.length);
 };
+
+
+// Доработать форму, которую делали на занятии:
+// -Реализовать чтение массива с товарами при загрузке страницы. Если соответствующего ключа в localStorage нет мы используем пустой массив с товарами. 
+function checkLocalStorage() {
+    if (getLocalStorage() !== null) {
+        updateList(getLocalStorage());
+    }
+}
