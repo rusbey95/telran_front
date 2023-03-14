@@ -13,7 +13,14 @@
 // 	posts: [...]
 // }
 
-let userId = 6;
+function saveUserIdInLocalStorage(id) {
+    localStorage.setItem('user-id', id);
+}
+function getUserIdFromLocalStorage() {
+    return localStorage.getItem('user-id');
+}
+
+let userId = getUserIdFromLocalStorage() ? getUserIdFromLocalStorage() : 10;
 
 async function getUserWithPosts() {
     try {
@@ -31,12 +38,13 @@ async function getUserWithPosts() {
 
         return obj;
     } catch (e) {
-        return e;
-    }
-}
-// getUserWithPosts();
-// console.log(getUserWithPosts());
+        const errorMessage = document.createElement('p');
+        errorMessage.classList = 'error';
+        errorMessage.innerHTML = e.message;
 
+        container.append(errorMessage);
+    };
+}
 
 // Создать функцию, которая получает данные о пользователе и  добавляет div с данными о пользователе и всеми его постами. Возвращаемая карточка должна иметь следующую структуру.
 
@@ -65,44 +73,49 @@ async function getUserWithPosts() {
 // console.log(getUserWithPosts())
 
 
-const container = document.querySelector('.container');
+const container = document.querySelector('.content');
 async function getDataUsers() {
     const data = await getUserWithPosts();
-    console.log(getUserWithPosts());
-    const userContainer = document.createElement('div');
-    userContainer.classList.add('user-container');
+    try {
+        const userContainer = document.createElement('div');
+        userContainer.classList.add('user-container');
 
-    const userBox = document.createElement('div');
-    userBox.classList.add('user');
+        const userBox = document.createElement('div');
+        userBox.classList.add('user');
 
-    const userName = document.createElement('p');
-    userName.textContent = data.user.name;
+        const userName = document.createElement('p');
+        userName.textContent = data.user.name;
 
-    const userEmail = document.createElement('p');
-    userEmail.textContent = data.user.email;
+        const userEmail = document.createElement('p');
+        userEmail.textContent = data.user.email;
 
-    const postBox = document.createElement('div');
-    postBox.classList.add('posts');
+        const postBox = document.createElement('div');
+        postBox.classList.add('posts');
 
-    data.posts.forEach(element => {
-        const postItem = document.createElement('div');
-        postItem.classList.add('item');
-        postItem.style.marginBottom = '15px';
-        postItem.style.borderBottom = '1px solid #ddd';
+        data.posts.forEach(element => {
+            const postItem = document.createElement('div');
+            postItem.classList.add('item');
 
-        const postTitle = document.createElement('h3');
-        postTitle.textContent = element.title;
+            const postTitle = document.createElement('h3');
+            postTitle.textContent = element.title;
 
-        const postContent = document.createElement('p');
-        postContent.textContent = element.body;
+            const postContent = document.createElement('p');
+            postContent.textContent = element.body;
 
-        postItem.append(postTitle, postContent);
-        postBox.append(postItem);
-    });
+            postItem.append(postTitle, postContent);
+            postBox.append(postItem);
+        });
 
-    container.append(userContainer);
-    userContainer.append(userBox, postBox);
-    userBox.append(userName, userEmail);
+        container.append(userContainer);
+        userContainer.append(userBox, postBox);
+        userBox.append(userName, userEmail);
+
+        if (data) {
+            throw new Error('Такого пользователя нет');
+        }
+    } catch (e) {
+        return e;
+    }
 }
 getDataUsers();
 
@@ -115,15 +128,27 @@ prevBtn.onclick = () => {
     if (userId > 1) {
         container.innerHTML = '';
         userId--;
-        console.log(userId);
+
         getDataUsers();
+        saveUserIdInLocalStorage(userId);
     }
 }
 nextBtn.onclick = () => {
-    if (userId > 1) {
-        container.innerHTML = '';
-        userId++;
-        console.log(userId);
-        getDataUsers();
-    }
+    getUserWithPosts().then(function (value) {
+        console.log(value);
+        if (value) {
+            container.innerHTML = '';
+            userId++;
+
+            getDataUsers();
+            saveUserIdInLocalStorage(userId);
+        } else {
+            container.innerHTML = '';
+            getDataUsers();
+        }
+    })
 }
+
+// 1-5)Если при нажатии на кнопку функция, выводящая данные про пользователей, не получает никаких данных , то в интерфейс должно вывестись сообщение “Такого пользователя нет” и номер с пользователем не должен расти.
+
+// 2-6)ID выведенного пользователя должно сохраняться в localStorage и при обновлении страницы должны грузиться данные пользователя, на котором пользователь остановился в прошлый раз.
