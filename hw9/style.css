@@ -1,0 +1,259 @@
+:root {
+    --red: #F7654A;
+    --gray: #999999;
+    --light-gray: #F7F7F7;
+    --dark: #404149;
+    --black: #000000;
+    --white: #ffffff;
+    --light-black-gradient: linear-gradient(0deg, rgba(64, 65, 73, 0.9), rgba(64, 65, 73, 0.9));
+}
+* {
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background: var(--white);
+    font: 16px / 1.2 'Oswald', sans-serif;
+}
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Default grid */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.grid {
+    display: grid;
+    gap: 30px;
+}
+.align-center {
+    align-items: center;
+}
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.column-8 {
+    flex: 70%;
+    max-width: 70%;
+}
+.column-auto {
+    flex: auto
+    max-width: inherit;
+}
+.ml-auto {
+    margin-left: auto;
+}
+
+/* Default button */
+.btn {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    padding: 14px 47px;
+    display: inline-block;
+    text-decoration: none;
+    border: 0;
+}
+.btn-white {
+    color: var(--black);
+    background: var(--white);
+}
+.btn-white:hover {
+    background: var(--light-gray);
+}
+
+/* Default title */
+.title-big {
+    font-size: 64px;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+.title-middle {
+    font-size: 48px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+.title-small {
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 55px;
+}
+
+/* Main info */
+.main-info {
+    padding: 192px 0 377px;
+    position: relative;
+    background: url('img/main-bg.jpeg')no-repeat center/cover;
+}
+.main-info:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--light-black-gradient);
+}
+.main-info__column {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--white);
+    max-width: 750px;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+.main-info__description {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Advantages */
+.advantages {
+    margin: -150px 0 100px;
+    position: relative;
+}
+.advantages .advantages__box {
+    background: var(--light-gray);
+    padding: 57px 10px;
+}
+.advantages .grid {
+    max-width: 850px;
+    margin: 0 auto;
+}
+.advantages .column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+.advantages__title {
+    color: var(--red);
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+.advantages__sub-title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.advantages__description {
+    color: var(--gray);
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+/* Project */
+.project {
+    margin-bottom: 40px;
+}
+.project__img {
+    margin-bottom: 45px;
+}
+.project__title {
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.3;
+    padding-top: 21px;
+    margin-bottom: 20px;
+    display: block;
+    position: relative;
+}
+.project__title:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 55px;
+    height: 6px;
+    background: var(--red);
+}
+.project__decription {
+    color: var(--gray);
+    font: 16px/1.3 'Open-Sans', sans-serif;
+    margin-bottom: 30px;
+}
+
+/* Advantage line */
+.advantage-line {
+    padding: 35px 0 40px;
+    margin-bottom: 100px;
+    background: var(--red);
+    color: var(--white);
+}
+.advantages-line__subtitle {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+/* About our job */
+.about-our-job {
+    margin-bottom: 100px;
+}
+.about-our-job__column {
+    background: var(--light-gray);
+    padding: 59px 40px;
+    text-align: center;
+}
+.about-our-job__img {
+    margin-bottom: 30px;
+}
+.about-our-job__decription {
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 1.5;
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* Media */
+@media screen and (max-width:767px) {
+    .title-big {
+        font-size: 40px;
+    }
+    .grid {
+        gap: 10px;
+    }
+    .advantages__title {
+        font-size: 46px;
+    }
+    .advantages__sub-title {
+        font-size: 29px;
+    }
+    .advantage-line .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+    .advantages-line__subtitle {
+        margin-bottom: 20px;
+        display: block;
+    }
+}
