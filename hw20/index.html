@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Todo</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<section class="todo">
+				<div class="container">
+					<h1 class="title">Todo list</h1>
+					<div class="todo-buttons">
+						<button class="button button-add-todo">
+							+ Add todo
+						</button>
+						<button class="button button-completed-todo">
+							Completed
+						</button>
+						<button class="button button-edited-todo">
+							Edited
+						</button>
+						<button class="button button-all-todo">All</button>
+					</div>
+					<div class="todo-form">
+						<form>
+							<input
+								type="text"
+								placeholder="Todo title"
+								name="todo-title"
+								required
+								class="input"
+							/>
+							<textarea
+								cols="10"
+								rows="10"
+								placeholder="Todo description"
+								name="todo-description"
+								required
+								class="textarea"
+							></textarea>
+							<button class="button">Add todo</button>
+						</form>
+					</div>
+					<ul class="todo-list">
+						<li class="todo-item">
+							<h4 class="todo-title">1 Title todo</h4>
+							<p class="todo-description">
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. Ex quisquam eveniet quidem
+								neque consequuntur? Commodi tempore, suscipit
+								esse dicta dolorum temporibus corrupti delectus
+								aut! Expedita commodi facere eos excepturi
+								totam?
+							</p>
+							<div class="todo-list-buttons">
+								<button class="todo-edit"></button>
+								<button class="todo-complete"></button>
+								<button class="todo-delete">×</button>
+							</div>
+						</li>
+						<li class="todo-item">
+							<h4 class="todo-title">2 Title todo</h4>
+							<p class="todo-description">
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. Ex quisquam eveniet quidem
+								neque consequuntur? Commodi tempore, suscipit
+								esse dicta dolorum temporibus corrupti delectus
+								aut! Expedita commodi facere eos excepturi
+								totam?
+							</p>
+							<div class="todo-list-buttons">
+								<button class="todo-edit"></button>
+								<button class="todo-complete"></button>
+								<button class="todo-delete">×</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

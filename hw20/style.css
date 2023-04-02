@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+    --dark: #ddd;
+    --white: #fff;
+    --black: #000;
+    --border-radius: 3px;
+    --border: 1px solid var(--dark);
+    --font: 14px/1.3 'Roboto', sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font: var(--font);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+.title {
+    font-size: 35px;
+}
+.button {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: none;
+    background: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+.button:hover {
+    background: var(--dark);
+}
+.input,
+.textarea {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font: var(--font);
+}
+.textarea {
+    resize: none;
+}
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--black);
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+
+.todo-buttons {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.todo-buttons .button {
+    margin-right: 15px;
+}
+
+.todo-form {
+    margin-bottom: 40px;
+}
+
+.todo-list {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+}
+.todo-item {
+    padding-right: 130px;
+    margin-bottom: 30px;
+    position: relative;
+    min-height: 40px;
+}
+.todo-title {
+    margin: 0 0 10px;
+}
+.todo-description {
+    margin: 0;
+}
+.todo-list-buttons {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: -9px;
+}
+.todo-complete,
+.todo-delete,
+.todo-edit {
+    border: 0;
+    background: transparent;
+    font-size: 30px;
+    color: var(--dark);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.1s;
+    position: relative;
+}
+.todo-complete:hover,
+.todo-delete:hover,
+.todo-edit:hover{
+    opacity: 0.6;
+}
+.todo-complete::before {
+    content: '';
+    position: absolute;
+    border-color: var(--dark);
+    border-style: solid;
+    border-width: 0 3px 3px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 13px;
+    width: 6px;
+}
+.todo-edit:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ddd'%3E%3Cpath d='M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z'/%3E%3C/svg%3E") no-repeat 0 0/contain;
+}
