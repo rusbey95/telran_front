@@ -1,0 +1,28 @@
+// color
+$primary-color: #0d6efd;
+$success-color: #198754;
+$info-color: #0dcaf0;
+$dark-color: #f8f9fa;
+
+//transition
+$transition-delay: 0.2s;
+
+// grid
+.d-flex {
+    display: flex;
+}
+.align-center {
+    align-items: center;
+}
+.justify-space-between {
+    justify-content: space-between;
+}
+
+$columns: 12;
+$grid-width: 100%;
+
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        width: ($grid-width / $columns) * $i;
+    }
+}

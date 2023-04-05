@@ -1,0 +1,20 @@
+// header
+.header {
+    padding: 10px 0;
+    background: $dark-color;
+    &__logo {
+        max-width: 50px;
+        font-size: 0;
+        display: block;
+    }
+    &__item {
+        margin-left: 15px;
+    }
+    &__link {
+        color: map-get($colors, primary-color);
+        transition: all $transition-delay;
+        &:hover {
+            color: $info-color;
+        }
+    }
+}

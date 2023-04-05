@@ -1,0 +1,12 @@
+// @mixin - DRY (don't repeat yourself)
+@mixin border-radius($radius: 20px, $var) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+
+$colors: (
+    primary-color: #0d6efd,
+    success-color: #198754
+)
