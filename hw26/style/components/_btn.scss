@@ -1,0 +1,46 @@
+.button {
+    font: 1em/1.5 $cardo;
+    padding: 19px 19px 18px;
+    display: inline-block;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+    letter-spacing: 0.57px;
+    text-transform: capitalize;
+    transition: all $transition;
+    min-width: 222px;
+}
+
+.button_orange {
+    background: $orange;
+    color: $dark-blue;
+
+    &:hover {
+        background: $dark-orange;
+    }
+}
+
+.button_white {
+    color: $white;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 39px;
+        bottom: 19px;
+        width: calc(100% - 78px);
+        height: 1px;
+        background: $white;
+        transition: all $transition;
+    }
+
+    &:hover {
+        color: $orange;
+
+        &:before {
+            background: $orange;
+        }
+    }
+}

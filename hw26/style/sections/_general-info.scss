@@ -1,0 +1,50 @@
+.general-info {
+    padding: 92px 0;
+
+    @include s-screen {
+        padding: 30px 0;
+    }
+
+    &__sub-title {
+        font: 400 1.1em/1.5 $cardo;
+        letter-spacing: 1.2px;
+        text-transform: capitalize;
+        padding-left: 49px;
+        margin-bottom: 15px;
+        position: relative;
+        display: block;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            width: 35px;
+            height: 2px;
+            background: $orange;
+        }
+    }
+
+    &__title {
+        font: 400 3.36em/1.25 $cardo;
+        max-width: 550px;
+        margin-bottom: 24px;
+    }
+
+    &__description {
+        margin-bottom: 42px;
+
+        * {
+            font-size: 0.94em;
+        }
+    }
+
+    &__buttons {
+        margin-bottom: 50px;
+
+        .button {
+            margin-bottom: 10px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.social-link {
+    &__item {
+        margin-right: 10px;
+    }
+
+    &__link {
+        width: 45px;
+        height: 45px;
+        background: $white;
+        @extend .d-flex;
+        @extend .align-center;
+        @extend .justify-center;
+
+        &:hover {
+            background: $orange;
+        }
+    }
+
+    svg {
+        fill: $light-black;
+    }
+}

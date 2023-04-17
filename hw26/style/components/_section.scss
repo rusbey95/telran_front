@@ -1,0 +1,29 @@
+.section-dark {
+    background: #000;
+
+    p,
+    .text {
+        color: $light-blue;
+    }
+
+    .title {
+        color: $white;
+    }
+}
+
+.section-light {
+    background: $white;
+
+    p,
+    .text {
+        color: $light-blue;
+    }
+
+    .title {
+        color: $dark-blue;
+    }
+}
+
+.section-sky-blue {
+    background: $white;
+}

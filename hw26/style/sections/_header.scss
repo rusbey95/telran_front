@@ -1,0 +1,48 @@
+.header {
+    padding: 20px 0;
+
+    &__button {
+        @include x-large-screen {
+            width: 240px;
+        }
+    }
+}
+
+.logo {
+    margin: 0 15px 0 0;
+    width: 139px;
+
+    &__link {
+        display: block;
+    }
+}
+
+.menu {
+    @include x-large-screen {
+        margin-right: 84px;
+    }
+
+    &__link {
+        padding: 23px 24px;
+        color: $white;
+        display: block;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__item {
+        &_active {
+            .menu__link {
+                color: $orange;
+            }
+        }
+    }
+}
+
+.social-menu-box {
+    @include x-large-screen {
+        width: calc(100% - 139px - 255px);
+    }
+}

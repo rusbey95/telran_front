@@ -1,0 +1,56 @@
+.hidden-x {
+    @include x-large-screen {
+        display: none !important;
+    }
+}
+
+.hidden-m {
+    @include m-screen {
+        display: none !important;
+    }
+}
+
+.ml-x-auto {
+    @include x-large-screen {
+        margin-left: auto;
+    }
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.row {
+    margin: 0 -10px;
+}
+
+[class*='col'] {
+    padding: 0 10px;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-4 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
