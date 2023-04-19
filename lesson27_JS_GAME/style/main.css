@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.game {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin: 0 0 10px;
+}
+
+input,
+button {
+    background: transparent;
+    border: 2px solid #ddd;
+    max-width: 150px;
+    width: 100%;
+    padding: 10px;
+    margin: 0 0 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+button {
+    box-shadow: none;
+    color: #000;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    border-color: #000;
+    color: #000;
+}
