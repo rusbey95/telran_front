@@ -12,9 +12,13 @@ const pictures = document.createElement('div');
 pictures.classList.add('pictures');
 const btns = document.createElement('div');
 btns.classList.add('btns');
+const prevBtn = document.createElement('button');
+prevBtn.classList.add('prev');
+const nextBtn = document.createElement('button');
+nextBtn.classList.add('next');
 
 root.append(container);
-container.append(pictures, btns);
+container.append(pictures, btns, prevBtn, nextBtn);
 
 images.forEach(elem => {
     let image = document.createElement('div')
@@ -25,8 +29,20 @@ images.forEach(elem => {
 
 let slideIndex = 0;
 
+function scrollCarousel(carousel) {
+    carousel.style.left = `${slideIndex * -500}px`;
+}
+function changeCarouselDots(btnContainer, button) {
+    for (let y = 0; y < btnContainer.length; y++) {
+        btnContainer[y].classList.remove('active');
+    }
+    button.classList.add('active')
+}
+
 for (let i = 0; i < images.length; i++) {
     let btn = document.createElement('button');
+    btn.classList.add(i)
+
     btns.append(btn);
 
     const btnsChild = btns.children;
@@ -35,10 +51,30 @@ for (let i = 0; i < images.length; i++) {
 
     btn.onclick = () => {
         slideIndex = i;
-        pictures.style.left = `${slideIndex * -500}px`;
-        for (let y = 0; y < btnsChild.length; y++) {
-            btnsChild[y].classList.remove('active');
+
+        scrollCarousel(pictures);
+        changeCarouselDots(btnsChild, btn);
+    }
+
+    prevBtn.onclick = () => {
+        if (images.length - 1 < slideIndex || slideIndex <= 0) {
+            slideIndex = images.length - 1;
+        } else {
+            slideIndex--;
         }
-        btn.classList.add('active');
+
+        scrollCarousel(pictures);
+        changeCarouselDots(btnsChild, btnsChild[slideIndex]);
+    }
+
+    nextBtn.onclick = () => {
+        if (images.length - 1 > slideIndex) {
+            slideIndex++;
+        } else {
+            slideIndex = 0;
+        }
+
+        scrollCarousel(pictures);
+        changeCarouselDots(btnsChild, btnsChild[slideIndex]);
     }
 }
