@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button {
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.pictures {
+    display: grid;
+    grid-auto-flow: column;
+    position: absolute;
+    left: 0;
+    transition: left 0.5s;
+}
+
+.picture {
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.btns {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    display: flex;
+    gap: 15px;
+}
+
+.btns button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.btns button:hover,
+.btns button.active {
+    background-color: yellow;
+}
+
+.prev,
+.next {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: yellow;
+}
+
+.prev {
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctitle%3Ecircle-left%3C/title%3E%3Cpath d='M16 32c8.837 0 16-7.163 16-16s-7.163-16-16-16-16 7.163-16 16 7.163 16 16 16zM16 3c7.18 0 13 5.82 13 13s-5.82 13-13 13-13-5.82-13-13 5.82-13 13-13z'/%3E%3Cpath d='M20.914 9.914l-2.829-2.829-8.914 8.914 8.914 8.914 2.828-2.828-6.086-6.086z'/%3E%3C/svg%3E")no-repeat 0 0;
+}
+
+.next {
+    left: inherit;
+    right: 10px;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctitle%3Ecircle-right%3C/title%3E%3Cpath d='M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13z'/%3E%3Cpath d='M11.086 22.086l2.829 2.829 8.914-8.914-8.914-8.914-2.828 2.828 6.086 6.086z'/%3E%3C/svg%3E")no-repeat 0 0;
+}
