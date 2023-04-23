@@ -61,7 +61,6 @@ dataTexts.forEach(elem => {
         textBox.append(text);
     }
 
-
     textBox.style.backgroundImage = `url(${elem})`;
     texts.append(textBox);
 });
@@ -81,12 +80,10 @@ function changeCarouselDots(btnContainer, button) {
 for (let i = 0; i < dataTexts.length; i++) {
     let btn = document.createElement('button');
     btn.classList.add(i)
-
     btns.append(btn);
 
     const btnsChild = btns.children;
     btnsChild[0].classList.add('active');
-
 
     btn.onclick = () => {
         slideIndex = i;

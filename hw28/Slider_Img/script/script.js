@@ -42,12 +42,10 @@ function changeCarouselDots(btnContainer, button) {
 for (let i = 0; i < images.length; i++) {
     let btn = document.createElement('button');
     btn.classList.add(i)
-
     btns.append(btn);
 
     const btnsChild = btns.children;
     btnsChild[0].classList.add('active');
-
 
     btn.onclick = () => {
         slideIndex = i;
