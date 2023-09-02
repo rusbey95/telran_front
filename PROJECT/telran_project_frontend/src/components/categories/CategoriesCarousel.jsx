@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
 
@@ -8,9 +8,15 @@ import 'react-multi-carousel/lib/styles.css';
 import { responsive } from '../../carouselBreakpoints';
 import { Col, Container, Row } from 'react-bootstrap';
 import CategoriesItem from './CategoriesItem';
+import { categoriesAction } from '../../store/actions/getCategoriesAction';
 
 
 function CatigoriesCarousel() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(categoriesAction());
+    });
+
     const categories = useSelector(state => state.category.categories);
 
     return (

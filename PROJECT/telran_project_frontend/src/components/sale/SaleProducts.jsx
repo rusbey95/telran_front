@@ -1,11 +1,17 @@
-import React, { useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useMemo, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 
 import ProductsItem from '../products/ProductsItem';
+import { productsAction } from '../../store/actions/getProductsAction';
 
 
 function SaleProducts() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(productsAction());
+    });
+
     const products = useSelector(state => state.product.products);
     const productsWithSale = products.filter(product => product.discont_price !== null);
 

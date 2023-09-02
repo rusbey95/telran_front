@@ -1,17 +1,26 @@
-import React, { useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useMemo, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 
 import ProductsItem from './ProductsItem';
+import { productsAction } from '../../store/actions/getProductsAction';
 
 
 function Products() {
 	const products = useSelector(state => state.product.products);
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(productsAction());
+    });
+
+    console.log(products);
     
 	const [sortProducts, setSortProducts] = useState('');
     const [checked, setChecked] = useState('');
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
+
 
     const sortedSaleProducts = useMemo(() => {
         if (checked) {

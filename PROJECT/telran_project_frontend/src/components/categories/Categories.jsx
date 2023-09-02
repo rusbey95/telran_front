@@ -1,11 +1,17 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 
 import CategoriesItem from './CategoriesItem';
+import { categoriesAction } from '../../store/actions/getCategoriesAction';
 
 
 function Catigories() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(categoriesAction());
+    });
+
     const categories = useSelector(state => state.category.categories);
 
     return (

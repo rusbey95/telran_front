@@ -1,12 +1,18 @@
-import React, { useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useMemo, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
 
 import ProductsItem from '../products/ProductsItem';
+import { categoriesAction } from '../../store/actions/getCategoriesAction';
 
 
 function Category() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(categoriesAction());
+    });
+
     const products = useSelector((state) => state.product.products);
     const categories = useSelector((state) => state.category.categories);
     
